@@ -2,16 +2,26 @@ import pygame
 from pygame. locals import*
 
 pygame.init()
-screen = pygame.display.set_mode((640, 480))
+
+SCREEN_WIDTH, SCREEN_HEIGHT = 640, 480
+
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
 running = 1
+letters_guessed_wrong = []
+letters_guessed = []
+
+def to_list(str:str):
+    return list(str)
+
+def render(object, loc =()):
+    screen.blit(object, loc)
 
 while running:
     for event in pygame.event.get():
         if event.type == QUIT:
             running = 0
-        else:
-            print event
+        
 
 screen.fill((120, 120, 120))
 pygame.display.flip()
