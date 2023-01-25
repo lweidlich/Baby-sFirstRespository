@@ -1,0 +1,116 @@
+
+### faker.providers.address
+
+	fake.address()                                                              # 205 Elizabeth Islands South Kennethport, MO 68701
+	fake.administrative_unit()                                                  # Mississippi
+	fake.bothify(text='## ??',                                                  # 78 re
+	  letters='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')           
+	fake.building_number()                                                      # 5463
+	fake.city()                                                                 # North Maria
+	fake.city_prefix()                                                          # Lake
+	fake.city_suffix()                                                          # bury
+	fake.country()                                                              # Argentina
+	fake.country_code(representation='alpha-2')                                 # UG
+	fake.current_country()                                                      # United States
+	fake.current_country_code()                                                 # US
+	fake.hexify(text='^^^^', upper=False)                                       # 3221
+	fake.language_code()                                                        # mi
+	fake.lexify(text='????',                                                    # xslU
+	  letters='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')           
+	fake.locale()                                                               # fur_IT
+	fake.military_apo()                                                         # PSC 7116, Box 7935
+	fake.military_dpo()                                                         # Unit 0532 Box 7825
+	fake.military_ship()                                                        # USNV
+	fake.military_state()                                                       # AP
+	fake.numerify(text='###')                                                   # 497
+	fake.postalcode()                                                           # 54540
+	fake.postalcode_in_state(state_abbr=None)                                   # 55674
+	fake.postalcode_plus4()                                                     # 39339-1778
+	fake.postcode()                                                             # 57016
+	fake.postcode_in_state(state_abbr=None)                                     # 73062
+	fake.random_choices(elements=('a', 'b', 'c'), length=None)                  # ['b', 'c']
+	fake.random_digit()                                                         # 4
+	fake.random_digit_not_null()                                                # 3
+	fake.random_digit_not_null_or_empty()                                       # 1
+	fake.random_digit_or_empty()                                                # 8
+	fake.random_element(elements=('a', 'b', 'c'))                               # c
+	fake.random_elements(elements=('a', 'b', 'c'), length=None, unique=False,   # ['b']
+	  use_weighting=None)                                                       
+	fake.random_int(min=0, max=9999, step=1)                                    # 6191
+	fake.random_letter()                                                        # Z
+	fake.random_letters(length=16)                                              # ['T', 'z', 'p', 'L', 'V', 'D', 'I', 'g', 'E', 'x', 'e', 'S', 'C', 'd',
+	                                                                              'p', 'k']
+	fake.random_lowercase_letter()                                              # l
+	fake.random_number(digits=None, fix_len=False)                              # 522103
+	fake.random_sample(elements=('a', 'b', 'c'), length=None)                   # ['c']
+	fake.random_uppercase_letter()                                              # A
+	fake.randomize_nb_elements(number=10, le=False, ge=False, min=None,         # 10
+	  max=None)                                                                 
+	fake.secondary_address()                                                    # Suite 441
+	fake.state()                                                                # Maine
+	fake.state_abbr(include_territories=True)                                   # LA
+	fake.street_address()                                                       # 23930 Timothy Inlet
+	fake.street_name()                                                          # Carpenter Roads
+	fake.street_suffix()                                                        # Isle
+	fake.zipcode()                                                              # 73560
+	fake.zipcode_in_state(state_abbr=None)                                      # 52228
+	fake.zipcode_plus4()                                                        # 50224-3314
+
+### faker.providers.automotive
+
+	fake.license_plate()                                                        # TU-9372
+
+### faker.providers.bank
+
+	fake.aba()                                                                  # 040382584
+	fake.bank_country()                                                         # GB
+	fake.bban()                                                                 # YKOP14869969442803
+	fake.iban()                                                                 # GB81VNAU80636732868749
+	fake.swift(length=None, primary=False, use_dataset=False)                   # SIXEGB31EW3
+	fake.swift11(primary=False, use_dataset=False)                              # OSVXGBWCMP2
+	fake.swift8(use_dataset=False)                                              # VRCNGBL2
+
+### faker.providers.barcode
+
+	fake.ean(length=13, prefixes=())                                            # 3613948128407
+	fake.ean13(prefixes=(), leading_zero=None)                                  # 6304230232687
+	fake.ean8(prefixes=())                                                      # 60548849
+	fake.localized_ean(length=13)                                               # 0588645863636
+	fake.localized_ean13()                                                      # 0977719120667
+	fake.localized_ean8()                                                       # 04400684
+	fake.upc_a(upc_ae_mode=False, base=None, number_system_digit=None)          # 291430937176
+	fake.upc_e(base=None, number_system_digit=None, safe_mode=True)             # 13783032
+
+### faker.providers.color
+
+	fake.color(hue=None, luminosity=None, color_format='hex')                   # #ceb41e
+	fake.color_name()                                                           # Orange
+	fake.hex_color()                                                            # #4b055c
+	fake.rgb_color()                                                            # 147,40,6
+	fake.rgb_css_color()                                                        # rgb(155,139,81)
+	fake.safe_color_name()                                                      # purple
+	fake.safe_hex_color()                                                       # #bb33bb
+
+### faker.providers.company
+
+	fake.bs()                                                                   # repurpose e-business e-tailers
+	fake.catch_phrase()                                                         # Re-engineered radical initiative
+	fake.company()                                                              # Warren, Johnson and Gross
+	fake.company_suffix()                                                       # and Sons
+
+### faker.providers.credit_card
+
+	fake.credit_card_expire(start='now', end='+10y', date_format='%m/%y')       # 05/29
+	fake.credit_card_full(card_type=None)                                       # American Express Pamela Padilla 378623219971564 11/25 CID: 9881
+	fake.credit_card_number(card_type=None)                                     # 370369273878208
+	fake.credit_card_provider(card_type=None)                                   # VISA 13 digit
+	fake.credit_card_security_code(card_type=None)                              # 667
+
+### faker.providers.currency
+
+	fake.cryptocurrency()                                                       # ('ZEC', 'Zcash')
+	fake.cryptocurrency_code()                                                  # EOS
+	fake.cryptocurrency_name()                                                  # Emercoin
+	fake.currency()                                                             # ('PGK', 'Papua New Guinean kina')
+	fake.currency_code()                                                        # AED
+	fake.currency_name()                                                        # North Korean won
