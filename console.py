@@ -32,6 +32,13 @@ def checkWord(usrInput):
                     guesses =- 1
                     wrong_letters.append(user)
 
+                elif len(correct_letters) == genWordLength:
+                    print(f"correct! the word is {word}")
+
+            if guesses == 0:
+                print("you are out of guesses!")
+                break
+
                 
                 
 def main():
