@@ -13,14 +13,15 @@ from faker import Faker
 fake = Faker() 
 
 
+wrong_letters = []
+correct_letters = []
+
+word = fake.word()
+genWordLength = len(word)
 
 def checkWord(usrInput):
-    word = fake.word()
-    wrong_letters = []
-    correct_letters = []
-    guesses = 10
-    genWordLength = len(word)
 
+    guesses = 10
     for gen_letter in word: # iterating through the generated word
         for user in usrInput: # iterating through the user input
 
@@ -35,7 +36,7 @@ def checkWord(usrInput):
                 elif len(correct_letters) == genWordLength:
                     print(f"correct! the word is {word}")
 
-            if guesses == 0:
+            elif guesses == 0:
                 print("you are out of guesses!")
                 break
 
@@ -43,7 +44,14 @@ def checkWord(usrInput):
                 
 def main():
     while True:
+        print(correct_letters)
         user_input = input("...\t")
+
+        if user_input == word:
+            print("you win!")
+
+        else:
+            checkWord(user_input)
 
 
 if __name__ == "__main__":
