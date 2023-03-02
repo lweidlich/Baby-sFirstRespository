@@ -32,7 +32,15 @@ while True:
         pygame.draw.line(surface, (255,255,255), (700,700), (300,700))
         pygame.draw.line(surface, (255,255,255), (300,700), (300,300))
         pygame.draw.line(surface, (255,255,255), (300,300), (700,300))
-        pygame.draw.line(surface, (255,255,255), (700,300), (700,500))
+        pygame.draw.line(surface, (255,255,255), (700,300), (700,700))
+        pygame.draw.line(surface, (255,255,255), (700,700), (500,900))
+        pygame.draw.line(surface, (255,255,255), (500,900), (300,700))
+        pygame.draw.line(surface, (255,255,255), (300,700), (100,500))
+        pygame.draw.line(surface, (255,255,255), (100,500), (300,300))
+        pygame.draw.line(surface, (255,255,255), (300,300), (500,100))
+        pygame.draw.line(surface, (255,255,255), (500,100), (700,300))
+        pygame.draw.line(surface, (255,255,255), (700,300), (900,500))
+        pygame.draw.line(surface, (255,255,255), (900,500), (700,700))
         pygame.draw.circle(surface, (255,255,255), (500,500), (10), width=2)
         pygame.draw.circle(surface, (255,255,255), (500,500), (20), width=2)
         pygame.draw.circle(surface, (255,255,255), (500,500), (30), width=2)
@@ -43,6 +51,8 @@ while True:
         pygame.draw.circle(surface, (255,255,255), (500,500), (80), width=2)
         pygame.draw.circle(surface, (255,255,255), (500,500), (90), width=2)
         pygame.draw.circle(surface, (255,255,255), (500,500), (100), width=2)
+        pygame.draw.circle(surface, (255,255,255), (500,500), (800), width=2)
+        
         
 
 
