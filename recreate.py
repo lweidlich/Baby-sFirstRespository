@@ -51,7 +51,7 @@ while True:
         pygame.draw.circle(surface, (255,255,255), (500,500), (80), width=2)
         pygame.draw.circle(surface, (255,255,255), (500,500), (90), width=2)
         pygame.draw.circle(surface, (255,255,255), (500,500), (100), width=2)
-        pygame.draw.circle(surface, (255,255,255), (500,500), (800), width=2)
+        pygame.draw.circle(surface, (255,255,255), (500,500), (400), width=2)
         
         
 
