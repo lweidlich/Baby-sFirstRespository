@@ -7,6 +7,12 @@ pygame.init()
 surface = pygame.display.set_mode((WIDTH,HEIGHT))
 clock = pygame.time.Clock()
 
+x_placed = {
+    "tl": False,
+    "tc": False,
+    "tr":  False,
+}
+
 def map():
     pygame.draw.line(surface, (255,255,255), (300,0), (300,900))
     pygame.draw.line(surface, (255,255,255), (600,0), (600,900))
@@ -24,16 +30,21 @@ def draw_x(
         end_y_2
     ):
     pygame.draw.line(surface, (255,255,255), (start_x_1, start_y_1), (end_x_1, end_y_1,))
-    pygame.draw.line(surface, (255,255,255), (0,600), (900,600))
+    pygame.draw.line(surface, (255,255,255), (start_x_2, start_y_2), (end_x_2, end_y_2))
 
 def draw_o(x,y):
     pygame.draw.circle(surface, (255,255,255), (x,y), 5, width=2)
 
-def pos_check(x,y):
+def win_check():
+    if x_placed['tl'] == True:
+        print("yay")
 
+
+def pos_check(x,y):
     #tl corner
     if x <= 300 and y <= 300:
         draw_x(0, 0, 300, 300, 300, 0, 0, 300)
+        x_placed['tl'] = True
 
     #tc spot
     if x > 300 and x < 600 and y <= 300:
@@ -68,6 +79,7 @@ def pos_check(x,y):
         draw_x(600, 600, 900, 900, 900, 600, 600, 900)
 
 
+
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -78,16 +90,17 @@ while True:
             isPressed = True
 
 
+        #game code
             if isPressed == True:
-                mouse_x, mouse_y = pygame.mouse.get_pos()
+                mouse_pos = pygame.mouse.get_pos()
+                pos_check(mouse_pos[0], mouse_pos[1])
 
             else: 
                 pass
 
-        #game code
+        win_check()
         map()
 
-        pos_check(mouse_x, mouse_y)
 
         pygame.display.update()
         clock.tick(60)
