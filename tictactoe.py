@@ -36,7 +36,78 @@ o_placed = {
 def bot():
     randnum = random.randint(1,9)
 
+    match randnum:
+        case 1: 
+            if x_placed["tl"] == False:
+                draw_o(150, 150)
+            else:
+                bot()
+                o_turn = False
+                x_turn = True
+
+        case 2: 
+            if x_placed["tc"] == False:
+                draw_o(450, 150)
+            else:
+                bot()
+                o_turn = False
+                x_turn = True
+
+        case 3: 
+            if x_placed["tr"] == False:
+                draw_o(750, 150)
+            else:
+                bot()
+                o_turn = False
+                x_turn = True
+
+        case 4: 
+            if x_placed["cl"] == False:
+                draw_o(150, 450)
+            else:
+                bot()
+                o_turn = False
+                x_turn = True
+
+        case 5: 
+            if x_placed["cc"] == False:
+                draw_o(450, 450)
+            else:
+                bot()
+                o_turn = False
+                x_turn = True
     
+        case 6: 
+            if x_placed["cr"] == False:
+                draw_o(750, 450)
+            else:
+                bot()
+                o_turn = False
+                x_turn = True
+
+        case 7: 
+            if x_placed["bl"] == False:
+                draw_o(150, 750)
+            else:
+                bot()
+                o_turn = False
+                x_turn = True
+
+        case 8: 
+            if x_placed["bc"] == False:
+                draw_o(450, 750)
+            else:
+                bot()
+                o_turn = False
+                x_turn = True
+
+        case 9: 
+            if x_placed["br"] == False:
+                draw_o(750, 750)
+            else:
+                bot()
+                o_turn = False
+                x_turn = True
 
 
 def map():
@@ -117,21 +188,29 @@ def pos_check(x,y):
     if x <= 300 and y <= 300:
         draw_x(0, 0, 300, 300, 300, 0, 0, 300)
         x_placed['tl'] = True
+        x_turn = False
+        o_turn = True
 
     #tc spot
     if x > 300 and x < 600 and y <= 300:
         draw_x(300, 0, 600, 300, 600, 0, 300, 300)
         x_placed['tc'] = True
+        x_turn = False
+        o_turn = True
 
     #tr corner
     if x > 600 and y <= 300:
         draw_x(600, 0, 900, 300, 900, 0, 600, 300)
         x_placed['tr'] = True
+        x_turn = False
+        o_turn = True
 
     #cl spot
     if x <= 300 and y > 300 and y <= 600:
         draw_x(0, 300, 300, 600, 300, 300, 0, 600)
         x_placed['cl'] = True
+        x_turn = False
+        o_turn = True
 
     #cc
     if x > 300 and x <= 600 and y > 300 and y <= 600:
@@ -144,22 +223,93 @@ def pos_check(x,y):
     if x > 600 and y > 300 and y <= 600:
         draw_x(600, 300, 900, 600, 900, 300, 600, 600)
         x_placed['cr'] = True
+        x_turn = False
+        o_turn = True
 
     #bl
     if x <= 300 and y > 600:
         draw_x(0, 600, 300, 900, 300, 600, 0, 900)
         x_placed['bl'] = True
+        x_turn = False
+        o_turn = True
 
     #bc
     if x > 300 and x <= 600 and y > 600:
         draw_x(300, 600, 600, 900, 600, 600, 300, 900)
         x_placed['bc'] = True
+        x_turn = False
+        o_turn = True
 
     #br
     if x > 600 and y > 600:
         draw_x(600, 600, 900, 900, 900, 600, 600, 900)
         x_placed['br'] = True
+        x_turn = False
+        o_turn = True
 
+def pos_checko(x,y):
+    #tl corner
+    if x <= 300 and y <= 300:
+        draw_o(150, 150)
+        o_placed['tl'] = True
+        o_turn = False
+        x_turn = True
+
+    #tc spot
+    if x > 300 and x < 600 and y <= 300:
+        draw_o(450, 150)
+        o_placed['tc'] = True
+        o_turn = False
+        x_turn = True
+
+    #tr corner
+    if x > 600 and y <= 300:
+        draw_o(750, 150)
+        o_placed['tr'] = True
+        o_turn = False
+        x_turn = True
+
+    #cl spot
+    if x <= 300 and y > 300 and y <= 600:
+        draw_o(150, 450)
+        o_placed['cl'] = True
+        o_turn = False
+        x_turn = True
+
+    #cc
+    if x > 300 and x <= 600 and y > 300 and y <= 600:
+        draw_o(450, 450)
+        o_placed['cc'] = True
+        o_turn = False
+        x_turn = True
+
+    #cr
+    if x > 600 and y > 300 and y <= 600:
+        draw_o(750, 450)
+        o_placed['cr'] = True
+        o_turn = False
+        x_turn = True
+
+    #bl
+    if x <= 300 and y > 600:
+        draw_o(150, 750)
+        o_placed['bl'] = True
+        o_turn = False
+        x_turn = True
+
+    #bc
+    if x > 300 and x <= 600 and y > 600:
+        draw_o(450,750)
+        o_placed['bc'] = True
+        o_turn = False
+        x_turn = True
+
+    #br
+    if x > 600 and y > 600:
+        draw_o(750,750)
+        o_placed['br'] = True
+        o_turn = False
+        x_turn = True
 
 def main():
     while True:
