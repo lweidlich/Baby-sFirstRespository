@@ -13,6 +13,16 @@ winner = {
     "o": False
 }
 
+tiles = {
+    "tl": {
+        "x": 300,
+        "y": 300
+    }
+}
+
+# tiles['tl']['x']
+# tiles['tl']['y']
+
 x_placed = {
     "tl": False,
     "tc": False,
@@ -41,80 +51,89 @@ def bot(randnum, o_turn):
     try:
 
         if x_placed["tl"] == False and o_turn == True and randnum == 1:
-            draw_o(150, 150)
-            o_turn = False
-            x_turn = True
-            o_placed = True
+              if x <= 300 and y <= 300:
+                draw_o(150, 150)
+                o_placed['tl'] = True
+                o_turn = False
+                x_turn = True
         else:
             return
 
         if x_placed["tc"] == False and o_turn == True and randnum == 2:
-            draw_o(450, 150)
-            o_turn = False
-            x_turn = True
-            o_placed = True
+            if x > 300 and x < 600 and y <= 300:
+                draw_o(450, 150)
+                o_turn = False
+                x_turn = True
+                o_placed = True
         else:
             return
 
         if x_placed["tr"] == False and o_turn == True and randnum == 3:
-            draw_o(750, 150)
-            o_turn = False
-            x_turn = True
-            o_placed = True
+            if x > 600 and y <= 300:
+                draw_o(750, 150)
+                o_placed = True
+                o_turn = False
+                x_turn = True
         else:
             return
 
 
         if x_placed["cl"] == False and o_turn == True and randnum == 4:
-            draw_o(150, 450)
-            o_turn = False
-            x_turn = True
-            o_placed = True
+            if x <= 300 and y > 300 and y <= 600:
+                draw_x(0, 300, 300, 600, 300, 300, 0, 600)
+                x_placed['cl'] = True
+                x_turn = False
+                o_turn = True
         else:
             return
 
 
         if x_placed["cc"] == False and o_turn == True and randnum == 5:
-            draw_o(450, 450)
-            o_turn = False
-            x_turn = True
-            o_placed = True
+            if x > 300 and x <= 600 and y > 300 and y <= 600:
+                draw_o(450, 450)
+                o_placed['cc'] = True
+                o_turn = False
+                x_turn = True
         else:
             return
 
 
         if x_placed["cr"] == False and o_turn == True and randnum == 6:
-            draw_o(750, 450)
-            o_turn = False
-            x_turn = True
-            o_placed = True
+            if x > 600 and y > 300 and y <= 600:
+                draw_o(750, 450)
+                o_placed['cr'] = True
+                o_turn = False
+                x_turn = True
         else:
             return
 
 
         if x_placed["bl"] == False and o_turn == True and randnum == 7:
-            draw_o(150, 750)
-            o_turn = False
-            x_turn = True
-            o_placed = True
+            if x <= 300 and y > 600:
+                draw_o(150, 750)
+                o_placed['bl'] = True
+                o_turn = False
+                x_turn = True
         else:
             return
 
 
         if x_placed["bc"] == False and o_turn == True and randnum == 8:
-            draw_o(450, 750)
-            o_turn = False
-            x_turn = True
-            o_placed = True
+            if x > 300 and x <= 600 and y > 600:
+                draw_o(450,750)
+                o_placed['bc'] = True
+                o_turn = False
+                x_turn = True
         else:
             return
 
 
         if x_placed["br"] == False and o_turn == True and randnum == 9:
-            draw_o(750, 750)
-            o_turn = False
-            x_turn = True
-            o_placed = True
+            if x > 600 and y > 600:
+                draw_o(750,750)
+                o_placed['br'] = True
+                o_turn = False
+                x_turn = True
         else:
             return
 
@@ -302,6 +321,9 @@ def win_checko():
         winner["o"] == True
 
 def pos_check(x,y):
+    global x_turn
+    global o_turn
+
     #tl corner
     if x <= 300 and y <= 300:
         draw_x(0, 0, 300, 300, 300, 0, 0, 300)
@@ -366,6 +388,9 @@ def pos_check(x,y):
         o_turn = True
 
 def pos_checko(x,y): 
+    global x_turn
+    global o_turn
+    
     #tl corner
     if x <= 300 and y <= 300:
         draw_o(150, 150)
@@ -457,7 +482,7 @@ def main():
             win_check()
             win_checko()
             # bot(num, o_turn)
-
+            pos_checko(x, y)
 
             pygame.display.update()
             clock.tick(60)
