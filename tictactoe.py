@@ -13,15 +13,7 @@ winner = {
     "o": False
 }
 
-tiles = {
-    "tl": {
-        "x": 300,
-        "y": 300
-    }
-}
 
-# tiles['tl']['x']
-# tiles['tl']['y']
 
 x_placed = {
     "tl": False,
@@ -47,189 +39,175 @@ o_placed = {
     "br": False
 }
 
-def bot(randnum, o_turn):    
+def box(randnum, o_turn):    
+    pass
+    # try:
+
+    #     if x_placed["tl"] == False and o_turn == True and randnum == 1:
+    #           if x <= 300 and y <= 300:
+    #             draw_o(150, 150)
+    #             o_placed['tl'] = True
+    #             o_turn = False
+    #             x_turn = True
+    #     else:
+    #         return
+
+    #     if x_placed["tc"] == False and o_turn == True and randnum == 2:
+    #         if x > 300 and x < 600 and y <= 300:
+    #             draw_o(450, 150)
+    #             o_turn = False
+    #             x_turn = True
+    #             o_placed = True
+    #     else:
+    #         return
+
+    #     if x_placed["tr"] == False and o_turn == True and randnum == 3:
+    #         if x > 600 and y <= 300:
+    #             draw_o(750, 150)
+    #             o_placed = True
+    #             o_turn = False
+    #             x_turn = True
+    #     else:
+    #         return
+
+
+    #     if x_placed["cl"] == False and o_turn == True and randnum == 4:
+    #         if x <= 300 and y > 300 and y <= 600:
+    #             draw_x(0, 300, 300, 600, 300, 300, 0, 600)
+    #             x_placed['cl'] = True
+    #             x_turn = False
+    #             o_turn = True
+    #     else:
+    #         return
+
+
+    #     if x_placed["cc"] == False and o_turn == True and randnum == 5:
+    #         if x > 300 and x <= 600 and y > 300 and y <= 600:
+    #             draw_o(450, 450)
+    #             o_placed['cc'] = True
+    #             o_turn = False
+    #             x_turn = True
+    #     else:
+    #         return
+
+
+    #     if x_placed["cr"] == False and o_turn == True and randnum == 6:
+    #         if x > 600 and y > 300 and y <= 600:
+    #             draw_o(750, 450)
+    #             o_placed['cr'] = True
+    #             o_turn = False
+    #             x_turn = True
+    #     else:
+    #         return
+
+
+    #     if x_placed["bl"] == False and o_turn == True and randnum == 7:
+    #         if x <= 300 and y > 600:
+    #             draw_o(150, 750)
+    #             o_placed['bl'] = True
+    #             o_turn = False
+    #             x_turn = True
+    #     else:
+    #         return
+
+
+    #     if x_placed["bc"] == False and o_turn == True and randnum == 8:
+    #         if x > 300 and x <= 600 and y > 600:
+    #             draw_o(450,750)
+    #             o_placed['bc'] = True
+    #             o_turn = False
+    #             x_turn = True
+    #     else:
+    #         return
+
+
+    #     if x_placed["br"] == False and o_turn == True and randnum == 9:
+    #         if x > 600 and y > 600:
+    #             draw_o(750,750)
+    #             o_placed['br'] = True
+    #             o_turn = False
+    #             x_turn = True
+    #     else:
+    #         return
+
+    # except Exception as e:
+    #     print(str(e))
+
+
+def Bot():
+    global o_turn
+    randnum = random.randint(1,9)
+
     try:
+        match randnum:
+            case 1: 
+                if x_placed["tl"] == False and o_turn == True:
+                    draw_o(150, 150)
+                    o_turn = False
+                    x_turn = True
+                    o_placed['tl'] = True
+                
+            case 2: 
+                if x_placed["tc"] == False and o_turn == True:
+                    draw_o(450, 150)
+                    o_turn = False
+                    x_turn = True
+                    o_placed['tc'] = True
 
-        if x_placed["tl"] == False and o_turn == True and randnum == 1:
-              if x <= 300 and y <= 300:
-                draw_o(150, 150)
-                o_placed['tl'] = True
-                o_turn = False
-                x_turn = True
-        else:
-            return
-
-        if x_placed["tc"] == False and o_turn == True and randnum == 2:
-            if x > 300 and x < 600 and y <= 300:
-                draw_o(450, 150)
-                o_turn = False
-                x_turn = True
-                o_placed = True
-        else:
-            return
-
-        if x_placed["tr"] == False and o_turn == True and randnum == 3:
-            if x > 600 and y <= 300:
-                draw_o(750, 150)
-                o_placed = True
-                o_turn = False
-                x_turn = True
-        else:
-            return
-
-
-        if x_placed["cl"] == False and o_turn == True and randnum == 4:
-            if x <= 300 and y > 300 and y <= 600:
-                draw_x(0, 300, 300, 600, 300, 300, 0, 600)
-                x_placed['cl'] = True
-                x_turn = False
-                o_turn = True
-        else:
-            return
-
-
-        if x_placed["cc"] == False and o_turn == True and randnum == 5:
-            if x > 300 and x <= 600 and y > 300 and y <= 600:
-                draw_o(450, 450)
-                o_placed['cc'] = True
-                o_turn = False
-                x_turn = True
-        else:
-            return
-
-
-        if x_placed["cr"] == False and o_turn == True and randnum == 6:
-            if x > 600 and y > 300 and y <= 600:
-                draw_o(750, 450)
-                o_placed['cr'] = True
-                o_turn = False
-                x_turn = True
-        else:
-            return
-
-
-        if x_placed["bl"] == False and o_turn == True and randnum == 7:
-            if x <= 300 and y > 600:
-                draw_o(150, 750)
-                o_placed['bl'] = True
-                o_turn = False
-                x_turn = True
-        else:
-            return
-
-
-        if x_placed["bc"] == False and o_turn == True and randnum == 8:
-            if x > 300 and x <= 600 and y > 600:
-                draw_o(450,750)
-                o_placed['bc'] = True
-                o_turn = False
-                x_turn = True
-        else:
-            return
-
-
-        if x_placed["br"] == False and o_turn == True and randnum == 9:
-            if x > 600 and y > 600:
-                draw_o(750,750)
-                o_placed['br'] = True
-                o_turn = False
-                x_turn = True
-        else:
-            return
+            case 3: 
+                if x_placed["tr"] == False and o_turn == True:
+                    draw_o(750, 150)
+                    o_turn = False
+                    x_turn = True
+                    o_placed['tr'] = True
+                
+            case 4: 
+                if x_placed["cl"] == False and o_turn == True:
+                    draw_o(150, 450)
+                    o_turn = False
+                    x_turn = True
+                    o_placed['cl'] = True
+                
+            case 5: 
+                if x_placed["cc"] == False and o_turn == True:
+                    draw_o(450, 450)
+                    o_turn = False
+                    x_turn = True
+                    o_placed['cc'] = True
+               
+            case 6: 
+                if x_placed["cr"] == False and o_turn == True:
+                    draw_o(750, 450)
+                    o_turn = False
+                    x_turn = True
+                    o_placed['cr'] = True
+                
+            case 7: 
+                if x_placed["bl"] == False and o_turn == True:
+                    draw_o(150, 750)
+                    o_turn = False
+                    x_turn = True
+                    o_placed['bl'] = True
+                
+            case 8: 
+                if x_placed["bc"] == False and o_turn == True:
+                    draw_o(450, 750)
+                    o_turn = False
+                    x_turn = True
+                    o_placed['bc'] = True
+                
+            case 9: 
+                if x_placed["br"] == False and o_turn == True:
+                    draw_o(750, 750)
+                    o_turn = False
+                    x_turn = True
+                    o_placed['br'] = True
+                
+            case _:
+                Bot()
 
     except Exception as e:
         print(str(e))
-
-
-# def bot():
-#     global o_turn
-#     randnum = random.randint(1,9)
-
-#     try:
-#         match randnum:
-#             case 1: 
-#                 if x_placed["tl"] == False and o_turn == True:
-#                     draw_o(150, 150)
-#                     o_turn = False
-#                     x_turn = True
-#                     o_placed = True
-#                 else:
-#                     return
-
-#             case 2: 
-#                 if x_placed["tc"] == False and o_turn == True:
-#                     draw_o(450, 150)
-#                     o_turn = False
-#                     x_turn = True
-#                     o_placed = True
-#                 else:
-#                     return
-
-#             case 3: 
-#                 if x_placed["tr"] == False and o_turn == True:
-#                     draw_o(750, 150)
-#                     o_turn = False
-#                     x_turn = True
-#                     o_placed = True
-#                 else:
-#                     return
-
-#             case 4: 
-#                 if x_placed["cl"] == False and o_turn == True:
-#                     draw_o(150, 450)
-#                     o_turn = False
-#                     x_turn = True
-#                     o_placed = True
-#                 else:
-#                     return
-
-#             case 5: 
-#                 if x_placed["cc"] == False and o_turn == True:
-#                     draw_o(450, 450)
-#                     o_turn = False
-#                     x_turn = True
-#                     o_placed = True
-#                 else:
-#                     return
-        
-#             case 6: 
-#                 if x_placed["cr"] == False and o_turn == True:
-#                     draw_o(750, 450)
-#                     o_turn = False
-#                     x_turn = True
-#                     o_placed = True
-#                 else:
-#                     return
-
-#             case 7: 
-#                 if x_placed["bl"] == False and o_turn == True:
-#                     draw_o(150, 750)
-#                     o_turn = False
-#                     x_turn = True
-#                     o_placed = True
-#                 else:
-#                     return
-
-#             case 8: 
-#                 if x_placed["bc"] == False and o_turn == True:
-#                     draw_o(450, 750)
-#                     o_turn = False
-#                     x_turn = True
-#                     o_placed = True
-#                 else:
-#                     return
-
-#             case 9: 
-#                 if x_placed["br"] == False and o_turn == True:
-#                     draw_o(750, 750)
-#                     o_turn = False
-#                     x_turn = True
-#                     o_placed = True
-#                 else:
-#                     return
-
-#     except Exception as e:
-#         print(str(e))
 
 
 def map():
@@ -255,6 +233,7 @@ def draw_o(x,y):
     pygame.draw.circle(surface, (255,255,255), (x,y), 140, width=2)
 
 def win_check(): # checks X: works
+    global winner
     if x_placed['tl'] and x_placed['tc'] and x_placed['tr'] == True:
         pygame.draw.line(surface, (255,255,255), (0,150), (900,150), width=4)
         winner["x"] == True
@@ -288,6 +267,7 @@ def win_check(): # checks X: works
         winner["x"] == True
 
 def win_checko():
+    global winner
     if o_placed['tl'] and o_placed['tc'] and o_placed['tr'] == True:
         pygame.draw.line(surface, (255,255,255), (0,150), (900,150), width=4)
         winner["o"] == True
@@ -455,7 +435,8 @@ def pos_checko(x,y):
         x_turn = True
 
 def main():
-    while winner["x"] != True:
+    global winner
+    while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -471,18 +452,27 @@ def main():
                     pos_check(mouse_pos[0], mouse_pos[1])
 
                 else: 
-                    pass
+                   pass
 
-            # print(x_placed)
-            # print(o_placed)
+            if winner['x'] == True or winner['o'] == True:
+                if winner['x'] == True:
+                    print("You win!")
+                    # break
 
-            num = random.randint(1,9)
+                elif winner['o'] == True:
+                    print("Computer wins!")
+                    # break
+
+                else:
+                    print("this should not show up at all")
+                    print("if it does I have failed")
+
+                break
 
             map()
             win_check()
             win_checko()
-            # bot(num, o_turn)
-            pos_checko(x, y)
+            Bot()
 
             pygame.display.update()
             clock.tick(60)
