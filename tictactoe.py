@@ -271,34 +271,43 @@ def win_checko():
     if o_placed['tl'] and o_placed['tc'] and o_placed['tr'] == True:
         pygame.draw.line(surface, (255,255,255), (0,150), (900,150), width=4)
         winner["o"] == True
+        x_turn == False
 
     if o_placed['cl'] and o_placed['cc'] and o_placed['cr'] == True:
         pygame.draw.line(surface, (255,255,255), (0,450), (900,450), width=4)
         winner["o"] == True
+        x_turn == False
 
     if o_placed['bl'] and o_placed['bc'] and o_placed['br'] == True:
         pygame.draw.line(surface, (255,255,255), (0,750), (900,750), width=4)
         winner["o"] == True
+        x_turn == False
 
     if o_placed['tl'] and o_placed['cl'] and o_placed['bl'] == True:
         pygame.draw.line(surface, (255,255,255), (150,0), (150,900), width=4)
         winner["o"] == True
+        x_turn == False
 
     if o_placed['tc'] and o_placed['cc'] and o_placed['bc'] == True:
         pygame.draw.line(surface, (255,255,255), (450,0), (450,900), width=4)
         winner["o"] == True
+        x_turn == False
 
     if o_placed['tr'] and o_placed['cr'] and o_placed['br'] == True:
         pygame.draw.line(surface, (255,255,255), (750,0), (750,900), width=4)
         winner["o"] == True
+        x_turn == False
 
     if o_placed['tl'] and o_placed['cc'] and o_placed['br'] == True:
         pygame.draw.line(surface, (255,255,255), (0,0), (900,900), width=4)
         winner["o"] == True
+        x_turn == False
 
     if o_placed['tr'] and o_placed['cc'] and o_placed['bl'] == True:
         pygame.draw.line(surface, (255,255,255), (900,900), (0,0), width=4)
         winner["o"] == True
+        x_turn == False
+
 
 def pos_check(x,y):
     global x_turn
@@ -457,17 +466,17 @@ def main():
             if winner['x'] == True or winner['o'] == True:
                 if winner['x'] == True:
                     print("You win!")
-                    # break
+                    break
 
                 elif winner['o'] == True:
                     print("Computer wins!")
-                    # break
+                    break
 
                 else:
                     print("this should not show up at all")
                     print("if it does I have failed")
 
-                break
+            
 
             map()
             win_check()
