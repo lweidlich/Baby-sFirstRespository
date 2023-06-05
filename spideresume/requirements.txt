@@ -1,0 +1,9 @@
+django
+pip-check
+pip-review
+requests
+python-dotenv
+colorama
+charset-normalizer==3
+faker
+pyJWT
